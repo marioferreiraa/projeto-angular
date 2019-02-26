@@ -1,0 +1,12 @@
+.d{
+    width: 600px;
+    .p{
+        font-size: 10px;
+        .a{
+            color: white;
+            &.b{
+                color: black;
+            }
+        }
+    }
+}
