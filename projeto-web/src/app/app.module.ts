@@ -9,8 +9,10 @@ import { MainNavbarComponent } from './main-navbar/main-navbar.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, MatDialogModule, MatButtonModule } from '@angular/material';
 import { ModalLoginComponent } from './modal-login/modal-login.component';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { FormCadastroClienteComponent } from './form-cadastro-cliente/form-cadastro-cliente.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+
 
 
 @NgModule({
@@ -31,7 +33,8 @@ import { FormCadastroClienteComponent } from './form-cadastro-cliente/form-cadas
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatInputModule
+    MatInputModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent],
