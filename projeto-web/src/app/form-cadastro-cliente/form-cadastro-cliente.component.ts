@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormCadastroClienteComponent implements OnInit {
 
-  constructor() { }
+  labelCadastrarCliente:string;
+
+  constructor() {
+    this.labelCadastrarCliente = 'Cadastrar';
+  }
 
   ngOnInit() {
   }

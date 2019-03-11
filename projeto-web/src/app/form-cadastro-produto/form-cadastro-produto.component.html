@@ -1,0 +1,38 @@
+<div class="box-cad-produto">
+  <h2>Cadastro de Produto</h2>
+  <form class="form-cadastro-produto" id="formCadProduto">
+  
+      <mat-grid-list cols="4" rowHeight="80px">
+        
+        <mat-grid-tile>
+          <mat-form-field class="input-nome">
+            <input matInput placeholder="Nome do Produto">  
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <mat-form-field class="input-descricao">
+            <textarea matInput placeholder="Descrição"></textarea>
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <mat-form-field class="input-preco">
+            <input matInput placeholder="Preço">
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <mat-form-field class="input-status">
+            <input matInput placeholder="Status">
+          </mat-form-field>
+        </mat-grid-tile>
+    
+      </mat-grid-list>
+
+      <div class="btn-inserir-produto">
+        <button mat-button color="primary">{{labelCadastrarProduto}}</button>
+      </div>
+
+  </form>
+</div>

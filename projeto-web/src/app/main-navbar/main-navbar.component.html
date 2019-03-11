@@ -5,9 +5,9 @@
       [opened]="!(isHandset$ | async)">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+      <a mat-list-item href="#">Cadastro de Cliente</a>
+      <a mat-list-item href="#">Cadastro de Produto</a>
+      <a mat-list-item href="#">Cadastro Entregador</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -27,5 +27,6 @@
     </mat-toolbar>
 
     <app-form-cadastro-cliente></app-form-cadastro-cliente>
+    <app-form-cadastro-produto></app-form-cadastro-produto>
   </mat-sidenav-content>
 </mat-sidenav-container>

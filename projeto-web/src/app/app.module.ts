@@ -12,6 +12,7 @@ import { ModalLoginComponent } from './modal-login/modal-login.component';
 import { MatInputModule } from '@angular/material/input';
 import { FormCadastroClienteComponent } from './form-cadastro-cliente/form-cadastro-cliente.component';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { FormCadastroProdutoComponent } from './form-cadastro-produto/form-cadastro-produto.component';
 
 
 
@@ -21,6 +22,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MainNavbarComponent,
     ModalLoginComponent,
     FormCadastroClienteComponent,
+    FormCadastroProdutoComponent,
   ],
   imports: [
     BrowserModule,
