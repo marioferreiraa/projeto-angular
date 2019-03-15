@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { routing } from './app-routing.module';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainNavbarComponent } from './main-navbar/main-navbar.component';
@@ -13,6 +14,7 @@ import { MatInputModule } from '@angular/material/input';
 import { FormCadastroClienteComponent } from './form-cadastro-cliente/form-cadastro-cliente.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { FormCadastroProdutoComponent } from './form-cadastro-produto/form-cadastro-produto.component';
+import { HomeDashboardComponent } from './home-dashboard/home-dashboard.component';
 
 
 
@@ -23,6 +25,7 @@ import { FormCadastroProdutoComponent } from './form-cadastro-produto/form-cadas
     ModalLoginComponent,
     FormCadastroClienteComponent,
     FormCadastroProdutoComponent,
+    HomeDashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import { FormCadastroProdutoComponent } from './form-cadastro-produto/form-cadas
     MatIconModule,
     MatListModule,
     MatInputModule,
-    MatGridListModule
+    MatGridListModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent],

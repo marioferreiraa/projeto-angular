@@ -1,12 +1,25 @@
-.d{
-    width: 600px;
-    .p{
-        font-size: 10px;
-        .a{
-            color: white;
-            &.b{
-                color: black;
-            }
-        }
+.sidenav-container {
+  height: 100%;
+  .sidenav {
+    width: 200px;
+    .mat-toolbar {
+      background: inherit;
+      &.mat-primary {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+      }
     }
+    mat-nav-list{
+      .menu-active{
+        background-color: #dcdcdc;
+      }
+    }
+  }
+  .cont-btn-login{
+    position: absolute;
+    right: 15px;
+  }
 }
+
+  

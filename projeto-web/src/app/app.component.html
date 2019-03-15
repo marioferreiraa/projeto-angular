@@ -1,3 +1,34 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<app-main-navbar>
-</app-main-navbar>
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="!(isHandset$ | async)">
+      <mat-toolbar>Menu</mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/inserir-cliente" routerLinkActive="menu-active">Cadastro de Cliente</a>
+        <a mat-list-item routerLink="/inserir-produto" routerLinkActive="menu-active">Cadastro de Produto</a>
+        <a mat-list-item >Cadastro Entregador</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon"><a routerLink="">menu</a></mat-icon>
+        </button>
+        <span>projeto-web</span>
+        <div class="cont-btn-login">
+          <button mat-raised-button color="accent" class="btn-login" (click)="openModal()">Login</button>
+        </div>
+      </mat-toolbar>
+      <router-outlet></router-outlet>
+      <!--app-form-cadastro-cliente></app-form-cadastro-cliente>
+      <app-form-cadastro-produto></app-form-cadastro-produto-->
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>
