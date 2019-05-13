@@ -1,0 +1,33 @@
+<div class="box-cad-entregador">
+  <h2>Cadastro de Entregador</h2>
+  <form class="form-cadastro-entregador" id="formCadEntregador">
+
+      <mat-grid-list cols="3" rowHeight="80px">
+
+        <mat-grid-tile>
+            <mat-form-field class="input-nome">
+              <input matInput placeholder="Nome">
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <mat-form-field class="input-telefone">
+            <span matPrefix>+1 &nbsp;</span>
+            <input type="tel" matInput placeholder="Telefone">
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <mat-form-field class="input-email">
+            <input matInput placeholder="Email">
+          </mat-form-field>
+        </mat-grid-tile>
+
+      </mat-grid-list>
+
+      <div class="btn-inserir-entregador">
+         <button mat-button color="primary">{{labelCadastrarEntregador}}</button>
+      </div>
+
+  </form>
+</div>

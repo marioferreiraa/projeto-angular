@@ -1,0 +1,20 @@
+.box-cad-entregador{
+    padding: 10px;
+    #formCadEntregador{
+        mat-form-field{
+            margin-right: 10px;
+            width: 100%;
+        }
+        .btn-inserir-entregador{
+            text-align: center;
+            button{
+                height: 48px;
+                width: 200px;
+                border-radius: 100px;
+                color: #fff;
+                font-weight: bold;
+                background: linear-gradient(to right, #673ab7 0%,#be2ef7 100%);
+            }
+        }
+    }
+}

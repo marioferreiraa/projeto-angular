@@ -15,6 +15,7 @@ import { FormCadastroClienteComponent } from './form-cadastro-cliente/form-cadas
 import { MatGridListModule } from '@angular/material/grid-list';
 import { FormCadastroProdutoComponent } from './form-cadastro-produto/form-cadastro-produto.component';
 import { HomeDashboardComponent } from './home-dashboard/home-dashboard.component';
+import { FormCadastroEntregadorComponent } from './form-cadastro-entregador/form-cadastro-entregador.component';
 
 
 
@@ -26,6 +27,7 @@ import { HomeDashboardComponent } from './home-dashboard/home-dashboard.componen
     FormCadastroClienteComponent,
     FormCadastroProdutoComponent,
     HomeDashboardComponent,
+    FormCadastroEntregadorComponent,
   ],
   imports: [
     BrowserModule,
