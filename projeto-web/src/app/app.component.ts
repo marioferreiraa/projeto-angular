@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { ModalLoginComponent } from './modal-login/modal-login.component';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { ModalLoginComponent } from './modal-login/modal-login.component';
+import { ModalCadastroComponent } from './modal-cadastro/modal-cadastro.component';
+import { AuthService } from './modal-login/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -18,9 +20,19 @@ export class AppComponent {
       map(result => result.matches)
     );
 
-    constructor(private breakpointObserver: BreakpointObserver, public dialog: MatDialog) {}
+    mostrarMenu: boolean = false;
+
+    constructor(private breakpointObserver: BreakpointObserver, public dialog: MatDialog, private authService: AuthService) {
+
+    }
+
+    ngOnInit(){
+      this.authService.mostrarMenuEmitter.subscribe(
+        mostrar => this.mostrarMenu = mostrar
+      );
+    }
   
-    openModal() {
+    openModalLogin() {
       const dialogConfig = new MatDialogConfig();
       dialogConfig.disableClose = true;
       dialogConfig.autoFocus = true;
@@ -35,6 +47,24 @@ export class AppComponent {
       dialogRef.afterClosed().subscribe(result => {
         console.log('Dialog was closed')
         console.log(result)
+      });
+    }
+
+    openModalCadastro() {
+      const dialogConfig = new MatDialogConfig();
+      dialogConfig.disableClose = true;
+      dialogConfig.autoFocus = true;
+      dialogConfig.width = '600px';
+      dialogConfig.data = {
+        id: 2,
+        title: 'Insira os seus dados para o Cadastro',
+        labelCadastro: "Cadastre-se",
+        labelClose: "X"
+      }
+      const dialogRef = this.dialog.open(ModalCadastroComponent, dialogConfig);
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('Dialog was closed');
+        console.log(result);
       });
     }
   

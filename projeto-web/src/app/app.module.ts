@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,13 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { FormCadastroProdutoComponent } from './form-cadastro-produto/form-cadastro-produto.component';
 import { HomeDashboardComponent } from './home-dashboard/home-dashboard.component';
 import { FormCadastroEntregadorComponent } from './form-cadastro-entregador/form-cadastro-entregador.component';
+import { ModalCadastroComponent } from './modal-cadastro/modal-cadastro.component';
+import { AuthService } from './modal-login/auth.service';
+import { AuthGuard } from './guards/auth.guard';
+import { CardapioComponent } from './cardapio/cardapio.component';
+import {MatCardModule} from '@angular/material/card';
+import { MinhaContaComponent } from './minha-conta/minha-conta.component';
+
 
 
 
@@ -28,6 +36,9 @@ import { FormCadastroEntregadorComponent } from './form-cadastro-entregador/form
     FormCadastroProdutoComponent,
     HomeDashboardComponent,
     FormCadastroEntregadorComponent,
+    ModalCadastroComponent,
+    CardapioComponent,
+    MinhaContaComponent
   ],
   imports: [
     BrowserModule,
@@ -42,12 +53,18 @@ import { FormCadastroEntregadorComponent } from './form-cadastro-entregador/form
     MatListModule,
     MatInputModule,
     MatGridListModule,
-    routing
+    routing,
+    FormsModule,
+    MatCardModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    AuthGuard
+  ],
   bootstrap: [AppComponent],
   entryComponents: [
-   ModalLoginComponent
+   ModalLoginComponent,
+   ModalCadastroComponent
   ]
 })
 export class AppModule { }

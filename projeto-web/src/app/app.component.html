@@ -1,14 +1,16 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+    <mat-sidenav *ngIf="mostrarMenu" #drawer class="sidenav" fixedInViewport="true"
         [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
         [mode]="(isHandset$ | async) ? 'over' : 'side'"
         [opened]="!(isHandset$ | async)">
       <mat-toolbar>Menu</mat-toolbar>
       <mat-nav-list>
-        <a mat-list-item routerLink="/inserir-cliente" routerLinkActive="menu-active">Cadastrar Cliente</a>
+          <a mat-list-item routerLink="/pedido" routerLinkActive="menu-active">Realizar pedido</a>
+          <a mat-list-item routerLink="/minha-conta" routerLinkActive="menu-active">Minha conta</a>
+        <!--a mat-list-item routerLink="/inserir-cliente" routerLinkActive="menu-active">Cadastrar Cliente</a>
         <a mat-list-item routerLink="/inserir-produto" routerLinkActive="menu-active">Cadastrar Produto</a>
-        <a mat-list-item routerLink="/inserir-entregador" routerLinkActive="menu-active">Cadastrar Entregador</a>
+        <a mat-list-item routerLink="/inserir-entregador" routerLinkActive="menu-active">Cadastrar Entregador</a>-->
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
@@ -22,11 +24,17 @@
           <mat-icon aria-label="Side nav toggle icon"><a routerLink="">menu</a></mat-icon>
         </button>
         <span>projeto-web</span>
+        <div class="cont-btn-cadastro">
+          <button mat-raised-button color="accent" class="btn-cadastro" (click)="openModalCadastro()">Cadastre-se</button>
+        </div>
         <div class="cont-btn-login">
-          <button mat-raised-button color="accent" class="btn-login" (click)="openModal()">Login</button>
+          <button mat-raised-button color="accent" class="btn-login" (click)="openModalLogin()">Login</button>
         </div>
       </mat-toolbar>
-      <router-outlet></router-outlet>
+      <div class="router">
+          <router-outlet></router-outlet>
+      </div>
+      
       <!--app-form-cadastro-cliente></app-form-cadastro-cliente>
       <app-form-cadastro-produto></app-form-cadastro-produto-->
 

@@ -1,0 +1,9 @@
+.container-cards{
+    width: 100%;
+    display: table;
+    .card {
+        width: 20%;
+        display: inline-block;
+        margin: 15px;
+    }
+}

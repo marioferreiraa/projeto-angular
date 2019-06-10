@@ -3,17 +3,15 @@
 <mat-dialog-content>
     <form class="form-login">
         <mat-form-field class="field-login field-username">
-            <input matInput placeholder="Username">
+            <input [(ngModel)]="usuario.username" matInput name="username" placeholder="Username">
         </mat-form-field>
         <br>
         <mat-form-field class="field-login field-oassword">
-            <input type="password" matInput placeholder="Password">
+            <input [(ngModel)]="usuario.password" type="password" matInput name="password" placeholder="Password">
         </mat-form-field>
     </form>
 </mat-dialog-content>
 <mat-dialog-actions>
- <!--button mat-button mat-dialog-close>No</button>
- <button mat-button [mat-dialog-close]="true">Yes</button-->
-    <button mat-raised-button color="primary" class="btn-login">{{labelLogin}}</button>
+    <button mat-raised-button color="primary" class="btn-login" (click)="fazerLogin()">{{labelLogin}}</button>
 </mat-dialog-actions>
 

@@ -20,7 +20,7 @@ export class MainNavbarComponent {
 
   constructor(private breakpointObserver: BreakpointObserver, public dialog: MatDialog) {}
   
-  openModal() {
+  openModalLogin() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
@@ -36,6 +36,10 @@ export class MainNavbarComponent {
       console.log('Dialog was closed')
       console.log(result)
     });
+  }
+
+  openModalCadastro() {
+    
   }
 
   onNoClick(): void {

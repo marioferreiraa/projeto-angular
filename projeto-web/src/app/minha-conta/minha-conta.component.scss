@@ -1,0 +1,19 @@
+.form-alterar{
+    width: 50%;
+    margin: 0 auto;
+    padding: 0 15px;
+    text-align: center;
+    .field-cadastro{
+        width: 100%;
+    }
+    .mat-dialog-actions{
+        width: fit-content;
+        margin: 0 auto;
+        text-align: center;
+        .btn-alter-dados{
+            width: 300px;
+            height: 48px;
+            font-size: 18px;
+        }
+    }
+}
