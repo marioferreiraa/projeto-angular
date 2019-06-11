@@ -3,39 +3,39 @@
 <mat-dialog-content>
     <form class="form-cadastro">
         <mat-form-field class="field-cadastro field-nome">
-            <input matInput placeholder="Nome">
+            <input matInput placeholder="Nome" [(ngModel)]="cliente.nome" name="nome">
         </mat-form-field>
         <br>
         <mat-form-field class="field-cadastro field-telefone">
             <span matPrefix>+55 &nbsp;</span>
-            <input type="tel" matInput placeholder="Telefone">
+            <input type="tel" matInput placeholder="Telefone" [(ngModel)]="cliente.telefone" name="telefone">
         <mat-icon matSuffix>mode_edit</mat-icon>
         </mat-form-field>
         <br>
         <mat-form-field class="field-cadastro field-username">
-            <input type="password" matInput placeholder="Nome de Usuário">
+            <input type="text" matInput placeholder="Nome de Usuário" [(ngModel)]="cliente.username" name="username">
         </mat-form-field>
         <br>
         <mat-form-field class="field-cadastro field-password">
-            <input type="password" matInput placeholder="Senha">
+            <input type="password" matInput placeholder="Senha" [(ngModel)]="cliente.password" name="password">
         </mat-form-field>
         <br>
         <mat-form-field class="field-cadastro field-repete-pass">
             <input type="password" matInput placeholder="Repetir Senha">
         </mat-form-field>
         <mat-form-field class="field-cadastro field-cep">
-            <input type="text" matInput placeholder="CEP">
+            <input type="text" matInput placeholder="CEP" [(ngModel)]="cliente.cep" name="cep">
         </mat-form-field>
         <mat-form-field class="field-cadastro field-rua">
-            <input type="text" matInput placeholder="Rua">
+            <input type="text" matInput placeholder="Rua" [(ngModel)]="cliente.rua" name="rua">
         </mat-form-field>
         <br>
         <mat-form-field class="field-cadastro field-numero">
-            <input type="number" matInput placeholder="Número">
+            <input type="number" matInput placeholder="Número"[(ngModel)]="cliente.numero" name="numero">
         </mat-form-field>
         <br>
         <mat-form-field class="field-cadastro field-referencia">
-            <input type="text" matInput placeholder="Referencia">
+            <input type="text" matInput placeholder="Referencia" [(ngModel)]="cliente.referencia" name="referencia">
         </mat-form-field>
         <br>
     </form>
@@ -43,5 +43,5 @@
 <mat-dialog-actions>
  <!--button mat-button mat-dialog-close>No</button>
  <button mat-button [mat-dialog-close]="true">Yes</button-->
-    <button mat-raised-button color="primary" class="btn-cadastro">{{labelCadastro}}</button>
+    <button mat-raised-button color="primary" (click)="cadastrar()" class="btn-cadastro">{{labelCadastro}}</button>
 </mat-dialog-actions>

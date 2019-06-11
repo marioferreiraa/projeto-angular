@@ -23,6 +23,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { CardapioComponent } from './cardapio/cardapio.component';
 import {MatCardModule} from '@angular/material/card';
 import { MinhaContaComponent } from './minha-conta/minha-conta.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -55,7 +56,8 @@ import { MinhaContaComponent } from './minha-conta/minha-conta.component';
     MatGridListModule,
     routing,
     FormsModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [
     AuthService,
