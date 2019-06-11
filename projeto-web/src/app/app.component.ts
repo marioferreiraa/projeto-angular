@@ -21,6 +21,7 @@ export class AppComponent {
     );
 
     mostrarMenu: boolean = false;
+    mostrarBotoes: boolean = true;
 
     constructor(private breakpointObserver: BreakpointObserver, public dialog: MatDialog, private authService: AuthService) {
 
@@ -29,6 +30,9 @@ export class AppComponent {
     ngOnInit(){
       this.authService.mostrarMenuEmitter.subscribe(
         mostrar => this.mostrarMenu = mostrar
+      );
+      this.authService.mostrarButtonEmitter.subscribe(
+        mostrar => this.mostrarBotoes = mostrar
       );
     }
   

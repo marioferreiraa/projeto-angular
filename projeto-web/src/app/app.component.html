@@ -24,10 +24,10 @@
           <mat-icon aria-label="Side nav toggle icon"><a routerLink="">menu</a></mat-icon>
         </button>
         <span>projeto-web</span>
-        <div class="cont-btn-cadastro">
+        <div *ngIf="mostrarBotoes" class="cont-btn-cadastro">
           <button mat-raised-button color="accent" class="btn-cadastro" (click)="openModalCadastro()">Cadastre-se</button>
         </div>
-        <div class="cont-btn-login">
+        <div *ngIf="mostrarBotoes" class="cont-btn-login">
           <button mat-raised-button color="accent" class="btn-login" (click)="openModalLogin()">Login</button>
         </div>
       </mat-toolbar>

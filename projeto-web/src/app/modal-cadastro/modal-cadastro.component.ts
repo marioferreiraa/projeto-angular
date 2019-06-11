@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
+import { FormControl, FormGroupDirective, NgForm, Validators, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA, ErrorStateMatcher } from '@angular/material';
 import { CadastroService } from './cadastro.service';
 import { Cliente } from '../model/Cliente';
@@ -33,6 +33,8 @@ export class ModalCadastroComponent{
   modalTitle:string;
   labelCadastro:string;
   labelClose:string;
+
+  formulario: FormGroup;
   
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, private cadastroService: CadastroService) { 
     this.modalTitle = data.title;
@@ -44,8 +46,26 @@ export class ModalCadastroComponent{
   }
 
   cadastrar(){
-    console.log(this.cliente);
-    this.cadastroService.create(this.cliente);
+    this.cadastroService.create(this.cliente).subscribe(
+      response => {
+        let dataAuth = {
+          "id": parseInt(response.toString()),
+          "username": this.cliente.username,
+          "password": this.cliente.password,
+          "type": "cliente"
+        }
+
+        this.cadastroService.createAuth(dataAuth).subscribe(
+          success => {
+            alert("Cliente inserido com sucesso, e login e senha criados no banco!")
+          },
+          error => console.error("Erro ao tentar inserir aautenticação")
+        );
+
+      },
+      error => console.error("Erro ao tentar inserir o cliente"),
+      () => console.log("OK")
+    );
   }
 
 }
